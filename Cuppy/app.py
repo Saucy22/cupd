@@ -47,7 +47,7 @@ os.system('clear')
 print('Updating your system')
 
 if isUbuntu == True:
-    os.system('sudo apt update && sudo apt upgrade; pacstall -U; flatpak update; snap refresh')
+    os.system('sudo apt update && sudo apt upgrade; pacstall -U && pacstall -Up; flatpak update; snap refresh')
     os.system('clear')
     print('Successfully updated your system! You can now close this window.')
 elif isFedora == True:
