@@ -1,17 +1,19 @@
-#Saucy22 on Github 2024
+#Saucy22 on GitHub 2024-2025
 
 #Importing built-in libraries at runtime
 import os, time, io
+from operator import truediv
 
 #Variables
 isUbuntu = False
 isFedora = False
+isDNF5 = False
 isArch = False
 
 #Checking for windows, if windows is found the program will give an error and quit
 if os.name in ("nt", "dos", "ce"):
     os.system('CLS')
-    print('This program is meant to be run on linux. This program is not compatable with Mac or Windows.')
+    print('This program is meant to be run on linux. This program is not compatible with Mac or Windows.')
     print('This program will quit in 10 seconds')
     time.sleep(10)
     quit()
@@ -34,6 +36,15 @@ while True:
         break
     elif distro == '2':
         isFedora = True
+        while True:
+            print("Would you like to use dnf5? y/N")
+            dnf5 = input()
+            if dnf5 == 'Y':
+                isDNF5 = True
+                break
+            else:
+                isDNF5 = False
+                break
         break
     elif distro == '3':
         isArch = True
@@ -47,13 +58,18 @@ os.system('clear')
 print('Updating your system')
 
 if isUbuntu == True:
-    os.system('sudo apt update && sudo apt upgrade; pacstall -U && pacstall -Up; flatpak update; snap refresh')
+    os.system('sudo apt update && sudo apt upgrade; pacstall -U; flatpak update; snap refresh')
     os.system('clear')
     print('Successfully updated your system! You can now close this window.')
 elif isFedora == True:
-    os.system('sudo dnf upgrade; flatpak update; snap refresh')
-    os.system('clear')
-    print('Successfully updated your system! You can now close this window.')
+    if isDNF5 == True:
+        os.system('sudo dnf5 upgrade; flatpak update; snap refresh')
+        os.system('clear')
+        print('Successfully updated your system! You can now close this window.')
+    else:
+        os.system('sudo dnf upgrade; flatpak update; snap refresh')
+        os.system('clear')
+        print('Successfully updated your system! You can now close this window.')
 elif isArch == True:
     os.system('yay; flatpak update; snap refresh; pacman -Syu')
     os.system('clear')
