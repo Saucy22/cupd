@@ -39,7 +39,7 @@ while True:
         while True:
             print("Would you like to use dnf5? y/N")
             dnf5 = input()
-            if dnf5 == 'Y':
+            if dnf5 == 'Y' or if dnf5 == 'y':
                 isDNF5 = True
                 break
             else:
