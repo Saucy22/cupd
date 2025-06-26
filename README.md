@@ -13,7 +13,7 @@ In order to install, you will need:
 Python3,
 Bash
 
-Simply clone the repo, extract the files to a folder and run installer.sh
+Simply clone the repo, extract the files to your HOME DIRECTORY DO NOT CHANGE THE FOLDER NAME and run installer.sh!
 
 # If the program doesn't install properly
 just run it using python or run the executable from your documents folder, i have to fix permission errors with the installer one of these days...
